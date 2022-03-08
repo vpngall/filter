@@ -43,7 +43,7 @@ https://raw.githubusercontent.com/robonxt/CleanYourTwitter/master/CleanYourTwitt
 # My own block list
 https://raw.githubusercontent.com/xarantolus/nervig/main/annoyances.txt
 https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt
-https://block.energized.pro/blu/formats/filter
+https://energized.pro/bluGo/formats/filter
 
 # ----------------------------------
 # Now some region-specific lists
