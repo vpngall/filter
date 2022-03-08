@@ -42,7 +42,7 @@ https://raw.githubusercontent.com/robonxt/CleanYourTwitter/master/CleanYourTwitt
 
 # My own block list
 https://raw.githubusercontent.com/xarantolus/nervig/main/annoyances.txt
-https://energized.pro/bluGo/formats/filter
+https://energized.pro/spark/formats/filter
 
 # ----------------------------------
 # Now some region-specific lists
