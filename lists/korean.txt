@@ -42,14 +42,6 @@ https://raw.githubusercontent.com/xarantolus/nervig/main/annoyances.txt
 # ----------------------------------
 # Now some region-specific lists
 # ----------------------------------
-https://easylist.to/easylistgermany/easylistgermany.txt
-
-# Adguard lists from https://github.com/AdguardTeam/AdguardFilters
-https://filters.adtidy.org/extension/ublock/filters/6.txt
-
-# ----------------------------------
-# Now some region-specific lists
-# ----------------------------------
 https://easylist-downloads.adblockplus.org/koreanlist.txt
 https://raw.githubusercontent.com/yous/YousList/master/youslist.txt
 https://raw.githubusercontent.com/List-KR/List-KR/master/filter.txt
