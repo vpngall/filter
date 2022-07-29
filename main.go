@@ -15,6 +15,9 @@ const (
 	listDir = "lists"
 	distDir = "dist"
 	logDir  = "logs"
+
+	// This is the "kMaxBodySize" from https://github.com/bromite/bromite/blob/master/build/patches/Bromite-AdBlockUpdaterService.patch
+	bromiteMaxFilterSize = 1024 * 1024 * 10
 )
 
 // generateFilterList generates a filter list from the listTextFile
@@ -77,6 +80,15 @@ func generateFilterList(listTextFile string) (err error) {
 		return fmt.Errorf("generating distributable list: %w", err)
 	}
 
+	// Check if output file is larger than 10mb
+	fileInfo, err := os.Stat(outputFile)
+	if err != nil {
+		return fmt.Errorf("getting filter output file info: %w", err)
+	}
+	if fileInfo.Size() > bromiteMaxFilterSize {
+		return fmt.Errorf("filter list is too large for Bromite (%d bytes > %d bytes)", fileInfo.Size(), bromiteMaxFilterSize)
+	}
+
 	err = util.AppendReleaseList(listTextFile, len(paths), len(filterListURLs))
 	if err != nil {
 		return fmt.Errorf("generating release list: %w", err)
@@ -104,7 +116,7 @@ func main() {
 		if err != nil {
 			log.Printf("Error while generating filter for %q: %s\n", path, err.Error())
 		}
-		return nil
+		return err
 	})
 	if err != nil {
 		panic("error while walking: " + err.Error())
